@@ -1,37 +1,24 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main()
 {
-    string str;
-    int i,j,k;
-    int siz=0;
-    char init;
-    cout << "input your string: "<<endl;
-    cin >> str;
-    cout<< str.length()<<endl;
-    for (i=0; i<str.length(); i++)
+    int sum = 0;
+    for ( int i=0; i<1000; i++)
     {
-        //init==str[i];
-        for (j=i+1; j<str.length(); j++)
+
+        if (i%3 == 0)
         {
-            if (j==i)
-            {
-                if (siz<j-i)
-                {
-                    siz=j-i;
-                }
-                break;
-            }
+            sum+=i;
+            continue;
+        }
+        else if (i%5==0)
+        {
+            sum+=i;
+            //break;
         }
     }
-    cout << "size of longest non-repeating string is : "<< siz<<endl;
-    for (k=i; k<j; k++)
-    {
-        cout << str[k];
-    }
-    cin >> str;
-    return 0;
+    cout << "sum is : " << sum;
 }
+
